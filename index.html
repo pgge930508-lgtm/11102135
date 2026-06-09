@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>11102135珍惜食物</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* 封面 */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe');
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+.btn {
+    padding: 12px 20px;
+    margin: 8px;
+    border: none;
+    background: green;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 內容區 */
+.section {
+    display: none;
+    padding: 50px;
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    margin: auto;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.aaa {
+    border: 10px solid #7BC96F;
+}
+
+iframe {
+    width: 80%;
+    height: 400px;
+}
+
+.back {
+    margin-top: 20px;
+    display: inline-block;
+    color: green;
+    cursor: pointer;
+}
+.bbb {
+    color: #BDB11A;
+    font-size: 50px;
+    border-bottom: 3px solid #BCBCBC;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 首頁 -->
+<div class="hero">
+    <h1>珍惜食物</h1>
+    <p>Every Bite Matters</p>
+
+    <button class="btn" onclick="show('about')">什麼是惜食</button>
+    <button class="btn" onclick="show('stats')">食物浪費現況</button>
+    <button class="btn" onclick="show('video')">影片與行動</button>
+</div>
+
+<!-- 什麼是惜食 -->
+<div id="about" class="section">
+  <div class="box">
+        <h2 class="bbb">什麼是惜食？</h2>
+    <p>惜食（Food Saving）是減少食物浪費的行為，例如吃多少煮多少、不浪費食物。</p>
+	  <img src="../../../Downloads/圖片A2.png" alt="" width="900" height="600" class="aaa"/> <span class="back" onclick="hideAll()">← 回首頁</span>
+    </div>
+</div>
+
+<!-- 現況 -->
+<div id="stats" class="section">
+    <div class="box">
+        <h2 class="bbb">食物浪費現況</h2>
+        <p>全球每年約 13 億噸食物被浪費。</p>
+        <p>台灣平均每人每年丟掉約 70 公斤食物。</p>
+        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba" width="900" height="800" class="aaa">
+        <span class="back" onclick="hideAll()">← 回首頁</span>
+    </div>
+</div>
+
+<!-- 影片 -->
+<div id="video" class="section">
+    <div class="box">
+        <h2 class="bbb">惜食影片</h2>
+
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/ECqpvHC23a0?si=MYZHxYo3f-hNYLlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <p>一起減少食物浪費，從今天開始。</p>
+
+        <span class="back" onclick="hideAll()">← 回首頁</span>
+    </div>
+</div>
+
+<!-- JS 控制顯示 -->
+<script>
+function show(id) {
+    document.querySelector('.hero').style.display = 'none';
+
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.style.display = 'none');
+
+    document.getElementById(id).style.display = 'block';
+}
+
+function hideAll() {
+    document.querySelector('.hero').style.display = 'flex';
+
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.style.display = 'none');
+}
+</script>
+
+</body>
+</html>
